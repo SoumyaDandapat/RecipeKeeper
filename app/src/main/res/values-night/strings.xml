@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="description_title">Description</string>
+    <string name="description">Random description.</string>
+    <string name="ingredients_title">Ingredients</string>
+    <string name="ingredients">Cheese, Lemon and Chicken</string>
+</resources>

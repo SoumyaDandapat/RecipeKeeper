@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Pizza",
+    "description": "description",
+    "imageUrl": "https://pngimg.com/uploads/pizza/pizza_PNG43991.png",
+    "steps": "step 1, step 2,step 3",
+    "ingredients": "cheese,tomato,bread"
+  },
+  {
+    "id": 2,
+    "name": "Burger",
+    "description": "description",
+    "imageUrl": "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    "steps": "steps..",
+    "ingredients": "ingredients.."
+  },
+]
