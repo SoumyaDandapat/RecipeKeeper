@@ -1,57 +1,60 @@
 package com.example.recipekeeper.adapter
 
-import android.content.Intent
-import android.os.Bundle
+import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recipekeeper.DisplayActivity
 import com.example.recipekeeper.R
-import com.example.recipekeeper.Recipe
+import com.example.recipekeeper.recipe.models.Recipe
 import com.squareup.picasso.Picasso
 
-class RecipeAdapter(private var recipeArray: Array<Recipe>) : RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
+class RecipeAdapter(val context: Context,val recipeClickInterface: RecipeClickInterface) : RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
 
-    inner class ViewHolder(recipeView: View):RecyclerView.ViewHolder(recipeView){
+    private val allRecipe = ArrayList<Recipe>()
 
-        val recipeTitle : TextView = recipeView.findViewById(R.id.recipeTitle)
-        val recipeImage : ImageView = recipeView.findViewById(R.id.recipeImage)
-        init {
+    inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
 
-            itemView.setOnClickListener {
-                    v: View ->
-                var b: Bundle = Bundle();
-//                b.putString("product",pName.text.toString())
-                Log.d("DEBUG", ": about to send intent")
-
-                val productIntent = Intent(recipeView.context, DisplayActivity::class.java)
-//                productIntent.putExtras(b)
-                recipeView.context.startActivity(productIntent)
-
-                //intent to move to ingredients page
-            }
-        }
+        val recipeTitle : TextView = itemView.findViewById(R.id.recipeTitle)
+        val recipeImage : ImageView = itemView.findViewById(R.id.recipeImage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeAdapter.ViewHolder {
+        Log.i("debug", "onCreateViewHolder: ")
         val v = LayoutInflater.from( parent.context  ).inflate(R.layout.recipe_card,parent,false)
         return ViewHolder( v )
     }
 
     override fun getItemCount(): Int {
-        return recipeArray.size
+        return allRecipe.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecipeAdapter.ViewHolder, position: Int) {
+        Log.i("debug", "onBindViewHolder: $position")
         holder.apply {
-            recipeTitle.text = recipeArray[position].name
-            Picasso.with(itemView.context).load(recipeArray[position].imageUrl).into(recipeImage)
+            recipeTitle.text = allRecipe[position].name
+            Picasso.with(itemView.context).load(allRecipe[position].imageUrl).into(recipeImage)
+        }
+        holder.itemView.setOnClickListener{
+            recipeClickInterface.onRecipeClick(allRecipe.get(position))
         }
     }
 
+    fun updateList(newList:List<Recipe>)
+    {
+        Log.i("List Changed", "updateList: $newList")
+        allRecipe.clear()
+
+        allRecipe.addAll(newList)
+        //notify data change
+        notifyDataSetChanged()
+    }
+
+}
+
+interface  RecipeClickInterface {
+    fun onRecipeClick(recipe: Recipe)
 }
