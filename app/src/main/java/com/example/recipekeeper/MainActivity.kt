@@ -1,9 +1,9 @@
 package com.example.recipekeeper
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.widget.SearchView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -13,9 +13,8 @@ import com.example.recipekeeper.adapter.RecipeAdapter
 import com.example.recipekeeper.adapter.RecipeClickInterface
 import com.example.recipekeeper.recipe.RecipeViewModel
 import com.example.recipekeeper.recipe.models.Recipe
-import kotlin.math.log
 
-class MainActivity : AppCompatActivity(),RecipeClickInterface {
+class MainActivity : AppCompatActivity(),RecipeClickInterface{
 
     lateinit var viewModal:RecipeViewModel
     lateinit var recipeRecyclerView: RecyclerView
@@ -36,7 +35,6 @@ class MainActivity : AppCompatActivity(),RecipeClickInterface {
             Recipe(5,"Pizza","desc","https://pngimg.com/uploads/pizza/pizza_PNG43991.png","some ingredients","some steps"),
             Recipe(6,"Burger","desc","https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png","some ingredients","some steps")
         )
-
 
 
         recipeRecyclerView.setHasFixedSize(true)
@@ -65,6 +63,21 @@ class MainActivity : AppCompatActivity(),RecipeClickInterface {
         //        Initially pushing values
         products.forEach{ viewModal.addRecipe(it)}
 //        Log.i("debug", "Recipe count ${recipeAdapter.itemCount} ")
+
+        //Search View
+        val searchView = findViewById<SearchView>(R.id.searchView2)
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                recipeAdapter.filter.filter(newText)
+                return false
+            }
+
+        })
 
     }
 
