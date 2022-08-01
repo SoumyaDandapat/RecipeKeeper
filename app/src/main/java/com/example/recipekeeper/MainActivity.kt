@@ -8,24 +8,26 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.recipekeeper.adapter.RecipeAdapter
 import com.example.recipekeeper.adapter.RecipeClickInterface
+import com.example.recipekeeper.databinding.ActivityMainBinding
 import com.example.recipekeeper.recipe.RecipeViewModel
 import com.example.recipekeeper.recipe.models.Recipe
 
 class MainActivity : AppCompatActivity(),RecipeClickInterface{
 
     lateinit var viewModal:RecipeViewModel
-    lateinit var recipeRecyclerView: RecyclerView
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
-        recipeRecyclerView = findViewById<RecyclerView>(R.id.recyclerView1)
-        recipeRecyclerView.layoutManager = GridLayoutManager(this,2)
-        recipeRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        binding= ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
+        binding.recyclerView1.layoutManager = GridLayoutManager(this,2)
+        binding.recyclerView1.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
         val products = mutableListOf<Recipe>(
             Recipe(1,"Pizza","desc","https://pngimg.com/uploads/pizza/pizza_PNG43991.png","some ingredients","some steps"),
@@ -37,11 +39,11 @@ class MainActivity : AppCompatActivity(),RecipeClickInterface{
         )
 
 
-        recipeRecyclerView.setHasFixedSize(true)
+        binding.recyclerView1.setHasFixedSize(true)
 
         val recipeAdapter = RecipeAdapter(this,this)
 
-        recipeRecyclerView.adapter = recipeAdapter
+        binding.recyclerView1.adapter = recipeAdapter
 
         // initializing our view modal.
         viewModal = ViewModelProvider(

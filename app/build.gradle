@@ -30,6 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -62,4 +66,12 @@ dependencies {
 
     //Picasso for images
     implementation "com.squareup.picasso:picasso:$rootProject.picassoVersion"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+
+//    //Mockfit Dependency
+//    implementation "com.github.javaherisaber.MockFit:runtime:$rootProject.mockfitVersion"
+//    kapt "com.github.javaherisaber.MockFit:compiler:$rootProject.mockfitVersion"
 }
