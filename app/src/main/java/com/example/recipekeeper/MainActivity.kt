@@ -93,8 +93,6 @@ class MainActivity : AppCompatActivity(),RecipeClickInterface{
                             }
 
                         }
-
-
                     }
 
                     override fun onFailure(call: Call<List<Recipe>>, t: Throwable) {
@@ -104,8 +102,6 @@ class MainActivity : AppCompatActivity(),RecipeClickInterface{
                 })
             }
         }
-
-
     }
 
     override fun onRecipeClick(recipe: Recipe) {
