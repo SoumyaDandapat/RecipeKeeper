@@ -71,7 +71,7 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
 
-//    //Mockfit Dependency
-//    implementation "com.github.javaherisaber.MockFit:runtime:$rootProject.mockfitVersion"
-//    kapt "com.github.javaherisaber.MockFit:compiler:$rootProject.mockfitVersion"
+    //Mockfit Dependency
+    implementation "com.github.javaherisaber.MockFit:runtime:$rootProject.mockfitVersion"
+    kapt "com.github.javaherisaber.MockFit:compiler:$rootProject.mockfitVersion"
 }

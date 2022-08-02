@@ -13,11 +13,19 @@ import com.example.recipekeeper.adapter.RecipeClickInterface
 import com.example.recipekeeper.databinding.ActivityMainBinding
 import com.example.recipekeeper.recipe.RecipeViewModel
 import com.example.recipekeeper.recipe.models.Recipe
+import com.example.recipekeeper.retrofit.AppExecutors
+import com.example.recipekeeper.retrofit.RemoteDataSource
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity(),RecipeClickInterface{
 
     lateinit var viewModal:RecipeViewModel
     lateinit var binding: ActivityMainBinding
+    private val executors = AppExecutors()
+    private val dataSource = RemoteDataSource(this)
+    private var loadingApi = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,17 +36,6 @@ class MainActivity : AppCompatActivity(),RecipeClickInterface{
 
         binding.recyclerView1.layoutManager = GridLayoutManager(this,2)
         binding.recyclerView1.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-
-        val products = mutableListOf<Recipe>(
-            Recipe(1,"Pizza","desc","https://pngimg.com/uploads/pizza/pizza_PNG43991.png","some ingredients","some steps"),
-            Recipe(2,"Burger","desc","https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png","some ingredients","some steps"),
-            Recipe(3,"Pizza","desc","https://pngimg.com/uploads/pizza/pizza_PNG43991.png","some ingredients","some steps"),
-            Recipe(4,"Burger","desc","https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png","some ingredients","some steps"),
-            Recipe(5,"Pizza","desc","https://pngimg.com/uploads/pizza/pizza_PNG43991.png","some ingredients","some steps"),
-            Recipe(6,"Burger","desc","https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png","some ingredients","some steps")
-        )
-
-
         binding.recyclerView1.setHasFixedSize(true)
 
         val recipeAdapter = RecipeAdapter(this,this)
@@ -62,10 +59,6 @@ class MainActivity : AppCompatActivity(),RecipeClickInterface{
 
         })
 
-        //        Initially pushing values
-        products.forEach{ viewModal.addRecipe(it)}
-//        Log.i("debug", "Recipe count ${recipeAdapter.itemCount} ")
-
         //Search View
         val searchView = findViewById<SearchView>(R.id.searchView2)
 
@@ -80,6 +73,38 @@ class MainActivity : AppCompatActivity(),RecipeClickInterface{
             }
 
         })
+
+        //API loading part
+        if (!loadingApi)
+        {
+            executors.networkIO().execute{
+                dataSource.api().getListOfRecipe(2,20).enqueue(object : Callback<List<Recipe>>{
+                    override fun onResponse(
+                        call: Call<List<Recipe>>,
+                        response: Response<List<Recipe>>
+                    ) {
+                        loadingApi=true
+                        executors.diskIO().execute{
+                            val apiResultList = response.body()
+                            apiResultList.let { list ->
+                                list?.forEach{
+                                    viewModal.addRecipe(it)
+                                }
+                            }
+
+                        }
+
+
+                    }
+
+                    override fun onFailure(call: Call<List<Recipe>>, t: Throwable) {
+                        TODO("Not yet implemented")
+                    }
+
+                })
+            }
+        }
+
 
     }
 

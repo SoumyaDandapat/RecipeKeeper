@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Pizza",
     "description": "description",
-    "imageUrl": "https://pngimg.com/uploads/pizza/pizza_PNG43991.png",
+    "imageurl": "https://pngimg.com/uploads/pizza/pizza_PNG43991.png",
     "steps": "step 1, step 2,step 3",
     "ingredients": "cheese,tomato,bread"
   },
@@ -11,8 +11,56 @@
     "id": 2,
     "name": "Burger",
     "description": "description",
-    "imageUrl": "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
+    "imageurl": "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
     "steps": "steps..",
     "ingredients": "ingredients.."
   },
+  {
+    "id": 3,
+    "name": "Sandwich",
+    "description": "description",
+    "imageurl": "https://pngimg.com/uploads/sandwich/sandwich_PNG64.png",
+    "steps": "step 1\n step 2\nstep 3\nstep 4",
+    "ingredients": "cheese,tomato,bread,butter"
+  },
+  {
+    "id": 4,
+    "name": "Biriyani",
+    "description": "Hyderabadi Style",
+    "imageurl": "https://www.nicepng.com/png/full/914-9141005_about-chicken-biryani-ad.png",
+    "steps": "step 1\n step 2\nstep 3\nstep 4\nstep 5\n step 6\nstep 7\nstep 8",
+    "ingredients": "Rice,Chicken,Masala,Onion,Ginger,Garlic"
+  },
+  {
+    "id": 5,
+    "name": "Chicken Roll",
+    "description": "description",
+    "imageurl": "http://pluspng.com/img-png/chicken-wrap-png--1085.png",
+    "steps": "step 1, step 2,step 3",
+    "ingredients": "cheese,tomato,bread,chicken,onion"
+  },
+  {
+    "id": 6,
+    "name": "Noodles",
+    "description": "description",
+    "imageurl": "http://pngimg.com/uploads/noodle/noodle_PNG15.png",
+    "steps": "steps..",
+    "ingredients": "ingredients.."
+  },
+  {
+    "id": 7,
+    "name": "Fish Curry",
+    "description": "description",
+    "imageurl": "https://1.bp.blogspot.com/-w-Uo_6l0fqU/T1iSlPxar6I/AAAAAAAABDw/W5AXYAd1Ylg/s1600/KERALA+FISH+CURRY.png",
+    "steps": "step 1, step 2,step 3",
+    "ingredients": "fish,tomato,onion,masala"
+  },
+  {
+    "id": 8,
+    "name": "Momos",
+    "description": "description",
+    "imageurl": "https://www.pikpng.com/pngl/b/465-4656115_sunil-momos-png-download-momo-non-veg-clipart.png",
+    "steps": "steps..",
+    "ingredients": "ingredients.."
+  }
 ]
