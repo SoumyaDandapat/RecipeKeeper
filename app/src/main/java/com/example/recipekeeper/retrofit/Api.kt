@@ -1,6 +1,6 @@
 package com.example.recipekeeper.retrofit
 
-import com.example.recipekeeper.recipe.models.Recipe
+import com.example.recipekeeper.data.models.Recipe
 import com.example.recipekeeper.util.Constants.Companion.MOCK_JSON_FILE_NAME
 import ir.logicbase.mockfit.Mock
 import retrofit2.Call

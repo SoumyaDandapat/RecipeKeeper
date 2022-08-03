@@ -1,4 +1,4 @@
-package com.example.recipekeeper.recipe.models
+package com.example.recipekeeper.data.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

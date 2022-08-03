@@ -1,8 +1,8 @@
-package com.example.recipekeeper.recipe
+package com.example.recipekeeper.data.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.recipekeeper.recipe.models.Recipe
+import com.example.recipekeeper.data.models.Recipe
 
 @Dao
 interface RecipeDao {

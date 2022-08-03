@@ -1,4 +1,4 @@
-package com.example.recipekeeper.adapter
+package com.example.recipekeeper.ui.adapter
 
 import android.content.Context
 import android.util.Log
@@ -8,7 +8,7 @@ import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipekeeper.databinding.RecipeCardBinding
-import com.example.recipekeeper.recipe.models.Recipe
+import com.example.recipekeeper.data.models.Recipe
 import com.squareup.picasso.Picasso
 
 class RecipeAdapter(val context: Context,val recipeClickInterface: RecipeClickInterface) : RecyclerView.Adapter<RecipeAdapter.ViewHolder>(),Filterable {

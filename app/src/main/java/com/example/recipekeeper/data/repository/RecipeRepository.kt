@@ -1,7 +1,8 @@
-package com.example.recipekeeper.recipe
+package com.example.recipekeeper.data.repository
 
 import androidx.lifecycle.LiveData
-import com.example.recipekeeper.recipe.models.Recipe
+import com.example.recipekeeper.data.dao.RecipeDao
+import com.example.recipekeeper.data.models.Recipe
 
 class RecipeRepository (private val recipeDao: RecipeDao){
     val allRecipe : LiveData<List<Recipe>> = recipeDao.getAllRecipe()

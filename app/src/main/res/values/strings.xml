@@ -6,4 +6,18 @@
     <string name="ingredients_title">Ingredients</string>
     <string name="ingredients">Cheese \nLemon \nChicken \nLettuce \nBread \nSalt \nFish \nRice</string>
     <string name="steps">step1 \nstep 2 \nstep 3 \nstep 4 \nstep5 \nstep 6 \nstep 7 \nstep 8</string>
+
+
+    //Menu items
+    <string name="menu_home">Home</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_about">About</string>
+
+    //Navigation bar
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="profile_title">Profile</string>
+    <string name="about_title">About</string>
+    <string name="about_text">RecipeKeeper stores your favourite recipes.</string>
 </resources>
