@@ -1,6 +1,6 @@
 package com.example.recipekeeper
 
-import android.content.Intent
+//import com.example.recipekeeper.ui.adapter.RecipeClickInterface
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -9,15 +9,13 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.recipekeeper.ui.adapter.RecipeClickInterface
 import com.example.recipekeeper.databinding.ActivityMainBinding
-import com.example.recipekeeper.ui.viewmodel.RecipeViewModel
-import com.example.recipekeeper.data.models.Recipe
 import com.example.recipekeeper.retrofit.AppExecutors
 import com.example.recipekeeper.retrofit.RemoteDataSource
+import com.example.recipekeeper.ui.viewmodel.RecipeViewModel
 import com.google.android.material.navigation.NavigationView
 
-class MainActivity : AppCompatActivity(),RecipeClickInterface{
+class MainActivity : AppCompatActivity(){
 
     lateinit var viewModal: RecipeViewModel
     lateinit var binding: ActivityMainBinding
@@ -127,14 +125,4 @@ class MainActivity : AppCompatActivity(),RecipeClickInterface{
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    override fun onRecipeClick(recipe: Recipe) {
-        val intent = Intent(this@MainActivity,DisplayActivity::class.java)
-        intent.putExtra("image_url",recipe.imageUrl)
-        intent.putExtra("ingredients",recipe.ingredients)
-        intent.putExtra("description",recipe.description)
-        intent.putExtra("name",recipe.name)
-        intent.putExtra("steps",recipe.steps)
-        startActivity(intent)
-
-    }
 }

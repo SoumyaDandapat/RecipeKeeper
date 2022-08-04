@@ -1,13 +1,13 @@
 package com.example.recipekeeper.ui.fragment
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.recipekeeper.ui.viewmodel.AboutViewModel
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.recipekeeper.R
+import com.example.recipekeeper.ui.viewmodel.AboutViewModel
 
 class AboutFragment : Fragment() {
 

@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
-import com.example.recipekeeper.databinding.RecipeCardBinding
 import com.example.recipekeeper.data.models.Recipe
+import com.example.recipekeeper.databinding.RecipeCardBinding
 import com.squareup.picasso.Picasso
 
-class RecipeAdapter(val context: Context,val recipeClickInterface: RecipeClickInterface) : RecyclerView.Adapter<RecipeAdapter.ViewHolder>(),Filterable {
+class RecipeAdapter(val context: Context?,val recipeClickInterface: RecipeClickInterface) : RecyclerView.Adapter<RecipeAdapter.ViewHolder>(),Filterable {
 
     private var allRecipe = ArrayList<Recipe>()
     private var allRecipeFiltered = ArrayList<Recipe>()
