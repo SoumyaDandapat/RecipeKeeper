@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 class RecipeViewModel(application: Application):AndroidViewModel(application){
 
     val allRecipe : LiveData<List<Recipe>>
+    
     val repository : RecipeRepository
 
     init {
