@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/drawable/fav_checked.xml" value="0.187" />
+        <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/drawable/heartgrey.xml" value="0.188" />
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/drawable/ic_menu_about.xml" value="0.188" />
+        <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/drawable/ic_menu_favourite.xml" value="0.188" />
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/drawable/ic_menu_home.xml" value="0.188" />
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/drawable/ic_menu_profile.xml" value="0.188" />
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/drawable/layout_bg.xml" value="0.1785" />
@@ -12,11 +15,12 @@
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/layout/content_main.xml" value="0.1796875" />
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/layout/fragment_about.xml" value="0.1" />
+        <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/layout/fragment_favourite.xml" value="0.1796875" />
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/layout/fragment_home.xml" value="0.1796875" />
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/layout/fragment_profile.xml" value="0.1796875" />
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/layout/fragment_recipe_details.xml" value="0.1" />
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/layout/nav_header_main.xml" value="0.1796875" />
-        <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/layout/recipe_card.xml" value="0.1" />
+        <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/layout/recipe_card.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/layout/recipe_details.xml" value="0.1" />
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/layout/recipe_recycler_view.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/soudanda/AndroidStudioProjects/RecipeKeeper/app/src/main/res/menu/activity_main_drawer.xml" value="0.1796875" />

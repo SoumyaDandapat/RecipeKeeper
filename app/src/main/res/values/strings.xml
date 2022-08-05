@@ -20,4 +20,6 @@
     <string name="profile_title">Profile</string>
     <string name="about_title">About</string>
     <string name="about_text">RecipeKeeper stores your favourite recipes.</string>
+    <string name="menu_favourite">Favourites</string>
+    <string name="recipe_details">Recipe Details</string>
 </resources>

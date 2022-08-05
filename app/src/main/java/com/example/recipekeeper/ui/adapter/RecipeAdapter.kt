@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipekeeper.data.models.Recipe
 import com.example.recipekeeper.databinding.RecipeCardBinding
@@ -33,9 +34,24 @@ class RecipeAdapter(val context: Context?,val recipeClickInterface: RecipeClickI
         holder.apply {
             binding.recipeTitle.text = allRecipeFiltered[position].name
             Picasso.with(itemView.context).load(allRecipeFiltered[position].imageUrl).into(binding.recipeImage)
+            binding.tgbFav.isChecked = allRecipeFiltered[position].favourite
+            binding.tgbFav.setOnClickListener{
+                recipeClickInterface.onToggle(allRecipeFiltered[position].id,!allRecipeFiltered[position].favourite)
+                binding.tgbFav.isChecked = !allRecipeFiltered[position].favourite
+                notifyDataSetChanged()
+                if (allRecipeFiltered[position].favourite){
+                    Log.i("TAG", "${allRecipeFiltered[position].name} removed from favorites.")
+                    Toast.makeText(context, "${allRecipeFiltered[position].name} removed from favorites.", Toast.LENGTH_SHORT).show()
+                }
+                else
+                {
+                    Log.i("TAG", "${allRecipeFiltered[position].name} added to favorites.")
+                    Toast.makeText(context, "${allRecipeFiltered[position].name} added to favorites.", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
         holder.itemView.setOnClickListener{
-            recipeClickInterface.onRecipeClick(allRecipeFiltered.get(position))
+            recipeClickInterface.onRecipeClick(allRecipeFiltered[position])
         }
     }
 
@@ -78,4 +94,5 @@ class RecipeAdapter(val context: Context?,val recipeClickInterface: RecipeClickI
 
 interface  RecipeClickInterface {
     fun onRecipeClick(recipe: Recipe)
+    fun onToggle(id:Int,changedState:Boolean)
 }

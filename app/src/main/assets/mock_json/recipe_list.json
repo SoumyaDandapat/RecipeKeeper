@@ -13,7 +13,8 @@
     "description": "description",
     "imageurl": "https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG4135.png",
     "steps": "steps..",
-    "ingredients": "ingredients.."
+    "ingredients": "ingredients..",
+    "favourite": true
   },
   {
     "id": 3,

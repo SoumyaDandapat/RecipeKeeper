@@ -13,17 +13,22 @@ import kotlinx.coroutines.launch
 class RecipeViewModel(application: Application):AndroidViewModel(application){
 
     val allRecipe : LiveData<List<Recipe>>
-    
+    val favouriteRecipe : LiveData<List<Recipe>>
     val repository : RecipeRepository
 
     init {
         val dao = RecipeDatabase.getDatabase(application).getRecipeDao()
         repository = RecipeRepository(dao)
         allRecipe = repository.allRecipe
+        favouriteRecipe = repository.favouriteRecipe
     }
 
     fun addRecipe(recipe: Recipe) =viewModelScope.launch(Dispatchers.IO) {
         repository.insert(recipe)
+    }
+
+    fun updateFavouriteStatus(id:Int,isFav:Boolean) =viewModelScope.launch(Dispatchers.IO) {
+        repository.updateFavourite(id, isFav)
     }
 
 
