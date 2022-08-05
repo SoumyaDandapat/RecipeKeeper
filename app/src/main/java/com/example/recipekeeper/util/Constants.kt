@@ -3,7 +3,7 @@ package com.example.recipekeeper.util
 class Constants {
     companion object{
         const val MOCK_JSON_FILE_NAME = "recipe_list.json"
-        var loadingApi = false
+        const val SHARED_PREFERENCE = "SharedPreference"
     }
 
 }

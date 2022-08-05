@@ -22,4 +22,5 @@
     <string name="about_text">RecipeKeeper stores your favourite recipes.</string>
     <string name="menu_favourite">Favourites</string>
     <string name="recipe_details">Recipe Details</string>
+    <string name="splash_text">RecipeKeeper</string>
 </resources>

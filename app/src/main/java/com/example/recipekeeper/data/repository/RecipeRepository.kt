@@ -12,7 +12,7 @@ class RecipeRepository (private val recipeDao: RecipeDao){
         recipeDao.insert(recipe)
     }
 
-    suspend fun updateFavourite(id:Int,isFav:Boolean){
+    fun updateFavourite(id:Int,isFav:Boolean){
         recipeDao.changeFavouriteStatus(id, isFav)
     }
 
