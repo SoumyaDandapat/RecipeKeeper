@@ -14,6 +14,7 @@ import com.example.recipekeeper.ui.viewmodel.RecipeViewModel
 import com.example.recipekeeper.util.Constants.Companion.SHARED_PREFERENCE
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -42,7 +43,9 @@ class SplashActivity : AppCompatActivity() {
                 loadApi()
                 editor = sharedPreferences.edit()
                 editor.putBoolean("hasData",true)
+                editor.commit()
             }
+            delay(1000)
             val intent = Intent(this@SplashActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
