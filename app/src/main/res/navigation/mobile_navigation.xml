@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_nav_home_to_recipeDetailsFragment2"
-            app:destination="@id/recipeDetailsFragment" />
+            app:destination="@id/recipeDetailsFragment" >
+        </action>
     </fragment>
 
     <fragment
@@ -28,7 +29,8 @@
         tools:layout="@layout/fragment_favourite" >
         <action
             android:id="@+id/action_nav_favourite_to_recipeDetailsFragment"
-            app:destination="@id/recipeDetailsFragment" />
+            app:destination="@id/recipeDetailsFragment" >
+        </action>
     </fragment>
 
     <fragment
@@ -40,5 +42,9 @@
         android:id="@+id/recipeDetailsFragment"
         android:name="com.example.recipekeeper.ui.fragment.RecipeDetailsFragment"
         android:label="@string/recipe_details"
-        tools:layout="@layout/fragment_recipe_details" />
+        tools:layout="@layout/fragment_recipe_details">
+        <argument
+            android:name="recipe"
+            app:argType="com.example.recipekeeper.data.models.Recipe" />
+    </fragment>
 </navigation>

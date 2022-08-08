@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.example.recipekeeper.databinding.FragmentRecipeDetailsBinding
 import com.example.recipekeeper.ui.viewmodel.RecipeDetailsViewModel
 import com.squareup.picasso.Picasso
@@ -24,13 +25,13 @@ class RecipeDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentRecipeDetailsBinding.inflate(inflater, container, false)
-        val bundle: Bundle? = arguments
-        bundle?.let {
-            Picasso.with(context).load(it.getString("image_url")).into(binding.imageView)
-            binding.description.text = it.getString("description")
-            binding.ingredients.text = it.getString("ingredients")
-            binding.steps.text = it.getString("steps")
-            binding.itemName.text = it.getString("name")
+        val args: RecipeDetailsFragmentArgs by navArgs()
+        args.apply{
+            Picasso.with(context).load(this.recipe.imageUrl).into(binding.imageView)
+            binding.description.text = this.recipe.description
+            binding.ingredients.text = this.recipe.ingredients
+            binding.steps.text = this.recipe.steps
+            binding.itemName.text = this.recipe.name
         }
         return binding.root
 

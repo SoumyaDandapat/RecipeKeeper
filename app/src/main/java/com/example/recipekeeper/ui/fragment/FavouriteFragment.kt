@@ -5,6 +5,7 @@ import android.view.*
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.recipekeeper.R
@@ -13,7 +14,6 @@ import com.example.recipekeeper.databinding.FragmentFavouriteBinding
 import com.example.recipekeeper.ui.adapter.RecipeAdapter
 import com.example.recipekeeper.ui.adapter.RecipeClickInterface
 import com.example.recipekeeper.ui.viewmodel.RecipeViewModel
-import com.example.recipekeeper.util.Utils
 
 class FavouriteFragment : Fragment(),RecipeClickInterface {
 
@@ -75,15 +75,8 @@ class FavouriteFragment : Fragment(),RecipeClickInterface {
     }
 
     override fun onRecipeClick(recipe: Recipe) {
-        val recipeDetailsFragment =RecipeDetailsFragment.newInstance()
-        val bundle = Bundle()
-        bundle.putSerializable("image_url",recipe.imageUrl)
-        bundle.putSerializable("ingredients",recipe.ingredients)
-        bundle.putSerializable("description",recipe.description)
-        bundle.putSerializable("name",recipe.name)
-        bundle.putSerializable("steps",recipe.steps)
-        recipeDetailsFragment.arguments = bundle
-        fragmentManager?.let { Utils.replaceFragment(recipeDetailsFragment, it) }
+        val action = FavouriteFragmentDirections.actionNavFavouriteToRecipeDetailsFragment(recipe)
+        findNavController().navigate(action)
 
     }
 
