@@ -25,6 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/home_recycler_horizontal_margin"
                 android:layout_marginVertical="@dimen/home_recycler_vertical_margin"
+                android:paddingBottom="@dimen/home_recycler_padding_bottom"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

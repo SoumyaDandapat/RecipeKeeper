@@ -2,10 +2,10 @@
   {
     "id": 1,
     "name": "Pizza",
-    "description": "description",
+    "description": "Pizza is one of the trending fast food. It contains bread, cheese and sauce as a base, and can contain any amount of toppings required.",
     "imageUrl": "https://pngimg.com/uploads/pizza/pizza_PNG43991.png",
-    "steps": "step 1, step 2,step 3",
-    "ingredients": "cheese,tomato,bread"
+    "steps": "Make the dough\nMake the sauce\nMake a flat dough\nPut sauce on the base\nPut cheese on the top\nSpread toppings and put it in oven for 15 minutes",
+    "ingredients": "cheese\nonion\nflour\nsalt\ncorn\ntomato\nchicken\nolives"
   },
   {
     "id": 2,
@@ -26,10 +26,10 @@
   {
     "id": 4,
     "name": "Biriyani",
-    "description": "Hyderabadi Style",
+    "description": "Dum Biryani is one of the favourite dish eaten near the eastern part of India. Its trademark is DUM, which is basically flour dough used to seal the Container. In West bengal, People also like Potatoes in them. ",
     "imageUrl": "https://www.nicepng.com/png/full/914-9141005_about-chicken-biryani-ad.png",
-    "steps": "step 1\n step 2\nstep 3\nstep 4\nstep 5\n step 6\nstep 7\nstep 8",
-    "ingredients": "Rice,Chicken,Masala,Onion,Ginger,Garlic"
+    "steps": "step 1\nstep 2\nstep 3\nstep 4\nstep 5\n step 6\nstep 7\nstep 8\nstep 9\nstep 10",
+    "ingredients": "Rice\nChicken\nMasala\nOnion\nGinger\nGarlic\nPotato\nFlour\nSalt"
   },
   {
     "id": 5,

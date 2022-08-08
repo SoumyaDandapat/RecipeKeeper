@@ -26,4 +26,6 @@
     <dimen name="recipe_detail_card_margin_top">10dp</dimen>
     <dimen name="title_margin_top">5dp</dimen>
     <dimen name="recipe_detail_title_size">25sp</dimen>
+    <dimen name="home_recycler_padding_bottom">30dp</dimen>
+    <dimen name="recipe_detail_card_bottom_margin">10dp</dimen>
 </resources>
