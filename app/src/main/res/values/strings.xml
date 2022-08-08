@@ -23,4 +23,7 @@
     <string name="menu_favourite">Favourites</string>
     <string name="recipe_details">Recipe Details</string>
     <string name="splash_text">RecipeKeeper</string>
+    <string name="default_recipe_title">Recipe Title</string>
+    <string name="recipe_image_text">Recipe Image</string>
+    <string name="steps_title">Steps</string>
 </resources>

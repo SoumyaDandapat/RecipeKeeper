@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="title_size">20dp</dimen>
+    <dimen name="title_size">20sp</dimen>
     <dimen name="home_scroll_padding">40dp</dimen>
     <dimen name="home_recycler_horizontal_margin">15dp</dimen>
     <dimen name="home_recycler_vertical_margin">30dp</dimen>
@@ -14,4 +14,16 @@
     <dimen name="about_text_margin_horizontal">20dp</dimen>
     <dimen name="about_text_font_size">20sp</dimen>
     <dimen name="splash_size">50sp</dimen>
+    <dimen name="toggle_btn_size">50dp</dimen>
+    <dimen name="recipe_title_padding">10dp</dimen>
+    <dimen name="recipe_image_height">190dp</dimen>
+    <dimen name="recipe_card_margin">8dp</dimen>
+    <dimen name="recipe_card_vertical_padding">10dp</dimen>
+    <dimen name="recipe_card_stroke_width">1dp</dimen>
+    <dimen name="recipe_card_elevation">1dp</dimen>
+    <dimen name="recipe_detail_image_height">225dp</dimen>
+    <dimen name="recipe_detail_card_horizontal_margin">5dp</dimen>
+    <dimen name="recipe_detail_card_margin_top">10dp</dimen>
+    <dimen name="title_margin_top">5dp</dimen>
+    <dimen name="recipe_detail_title_size">25sp</dimen>
 </resources>

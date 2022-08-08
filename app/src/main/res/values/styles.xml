@@ -4,5 +4,17 @@
     <style name="title_style">
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">@dimen/title_size</item>
+        <item name = "android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/title_margin_top</item>
     </style>
+
+    <style name="content_style">
+        <item name = "android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/title_margin_top</item>
+        <item name="android:layout_marginHorizontal">@dimen/content_margin_horizontal</item>
+    </style>
+
+    <dimen name="content_margin_horizontal">10dp</dimen>
 </resources>

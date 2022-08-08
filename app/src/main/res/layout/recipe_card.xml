@@ -5,14 +5,14 @@
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="@dimen/recipe_card_margin"
     android:background="@drawable/layout_bg"
     android:clickable="true"
     android:focusable="true"
-    android:paddingVertical="10dp"
-    app:strokeWidth="1dp"
+    android:paddingVertical="@dimen/recipe_card_vertical_padding"
+    app:strokeWidth="@dimen/recipe_card_stroke_width"
     app:strokeColor="@color/stroke_color"
-    app:cardElevation="0dp">
+    app:cardElevation="@dimen/recipe_card_elevation">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/item"
@@ -24,8 +24,8 @@
         <ImageView
             android:id="@+id/recipeImage"
             android:layout_width="wrap_content"
-            android:layout_height="194dp"
-            android:contentDescription="desc"
+            android:layout_height="@dimen/recipe_image_height"
+            android:contentDescription="@string/recipe_image_text"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,8 +39,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="10dp"
-            android:text="HI"
+            android:padding="@dimen/recipe_title_padding"
+            android:text="@string/default_recipe_title"
             android:textAlignment="center"
             android:textAppearance="?attr/textAppearanceHeadline6"
             app:layout_constraintEnd_toEndOf="parent"
@@ -49,8 +49,8 @@
 
         <ToggleButton
             android:id="@+id/tgbFav"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/toggle_btn_size"
+            android:layout_height="@dimen/toggle_btn_size"
             android:background="@drawable/fav_checked"
             android:focusable="false"
             android:focusableInTouchMode="false"
