@@ -85,5 +85,4 @@ class HomeFragment : Fragment() ,RecipeClickInterface{
     override fun onToggle(id:Int, changedState: Boolean) {
         viewModel.updateFavouriteStatus(id,changedState)
     }
-
 }
